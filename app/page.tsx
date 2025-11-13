@@ -1,6 +1,6 @@
 "use client"
-
 import { TeamGrid } from "@/components/team"
+import TeamsSection from "./TeamSection"
 
 export default function Home() {
   const imageData = [
@@ -26,6 +26,7 @@ export default function Home() {
 
   return (
     // <div className="w-[1000px]">
+    <div>
       <TeamGrid title="Website" images={imageData} backgroundImage="backgrounds/tech-bg.png" />
     // </div>
   )
