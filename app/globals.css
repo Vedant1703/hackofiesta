@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
@@ -119,4 +120,8 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.grover-font {
+  font-family: "Irish Grover", system-ui;
 }
