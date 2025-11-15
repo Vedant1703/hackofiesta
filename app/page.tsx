@@ -6,6 +6,9 @@ import { Team, Teams } from "@/constants/teams/all";
 
 import Header from "@/components/header";
 import SplashScreen from "@/components/splash-screen";
+import AboutNSponsor from "@/components/AboutNSponsor";
+
+
 
 export default function Home() {
 
@@ -13,6 +16,7 @@ export default function Home() {
     <>
         <Header />
         <SplashScreen />
+        <AboutNSponsor/>
         <main className="min-h-screen w-full bg-black font-sans">
         <div className="min-h-screen flex flex-col gap-50 pt-25 pb-25 items-center justify-center">
             <TeamsSection />
@@ -26,6 +30,8 @@ export default function Home() {
             ))}
         </div>
         </main>
+        
+
     </>
   );
 }

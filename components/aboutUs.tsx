@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const bgImage = "backgrounds/aboutUs.png";
+const bgImage = "assets/logos/bg.png";
 
 const AboutUs = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
