@@ -45,6 +45,7 @@ export function TeamGrid({ title, images, backgroundImage }: ImageGridProps) {
 
     // BACKGROUND: start scaled down at bottom center and grow -> move up to final placement
     // transformOrigin bottom-center so it "grows up" naturally
+
     gsap.set(backgroundRef.current, { transformOrigin: "50% 100%", willChange: "transform", y: "0%", scale: 0.4})
 
      tl.to(
@@ -67,7 +68,6 @@ export function TeamGrid({ title, images, backgroundImage }: ImageGridProps) {
       { y: "0%", opacity: 1, duration: 1, ease: "power3.out" },
       "bgDone"
     )
-    
 
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill())
