@@ -6,13 +6,21 @@ import { Team, Teams } from "@/constants/teams/all";
 
 import Header from "@/components/header";
 import SplashScreen from "@/components/splash-screen";
+import HeroParallax from "@/components/hero-parallax";
 
 export default function Home() {
 
   return (
     <>
         <Header />
-        <SplashScreen />
+        {/* <SplashScreen /> */}
+        <HeroParallax
+          backImage="/assets/hero/layer-front.jpeg"
+          topImage="/assets/hero/layer-back.png"
+          topScale={1.2}
+          topMaxHeight={520}
+          // height={}
+         />
         <main className="min-h-screen w-full bg-black font-sans">
         <div className="min-h-screen flex flex-col gap-50 pt-25 pb-25 items-center justify-center">
             <TeamsSection />
