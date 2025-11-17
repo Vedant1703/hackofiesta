@@ -14,7 +14,7 @@ export default function Home() {
         <Header />
         <SplashScreen />
         <main className="min-h-screen w-full bg-black font-sans">
-        <div className="min-h-screen flex flex-col gap-50 pt-25 pb-25 items-center justify-center">
+        <div className="min-h-screen flex flex-col gap-250 pt-25 pb-25 items-center justify-center">
             <TeamsSection />
             {Teams.map((team: Team) => (
                 <TeamGrid

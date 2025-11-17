@@ -32,6 +32,7 @@ export function TeamGrid({ title, images, backgroundImage }: ImageGridProps) {
     gsap.set(contentRef.current, { y: "100%", opacity: 0 })
 
     const tl = gsap.timeline({
+      paused: true,
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top 8%",
@@ -44,19 +45,15 @@ export function TeamGrid({ title, images, backgroundImage }: ImageGridProps) {
 
     // BACKGROUND: start scaled down at bottom center and grow -> move up to final placement
     // transformOrigin bottom-center so it "grows up" naturally
-    gsap.set(backgroundRef.current, { transformOrigin: "50% 100%", willChange: "transform" })
+    gsap.set(backgroundRef.current, { transformOrigin: "50% 100%", willChange: "transform", y: "0%", scale: 0.4})
 
-    tl.fromTo(
+     tl.to(
       backgroundRef.current,
       {
-        y: "120%",        // start well below the viewport
-        scale: 0.22,      // start small
-      },
-      {
-        y: "0%",          // end at natural position
-        scale: 1,         // end at normal size (matches your original layout)
-        duration: 1,
-        ease: "none",     // linear mapping with scrub ensures 1:1 feel with scroll
+        y: "0%",   // keep the final placement at natural position
+        scale: 1,
+        duration: 0.8,
+        ease: "power2.out",
       },
       0
     )
@@ -70,6 +67,7 @@ export function TeamGrid({ title, images, backgroundImage }: ImageGridProps) {
       { y: "0%", opacity: 1, duration: 1, ease: "power3.out" },
       "bgDone"
     )
+    
 
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill())
